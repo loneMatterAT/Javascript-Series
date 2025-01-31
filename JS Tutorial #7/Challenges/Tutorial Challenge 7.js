@@ -27,16 +27,34 @@ let isRegistered = false;
 // }
 
 // Second Option Using Nested Conditional Operators
-if(age >= 18) { // 1st
+// if(age >= 18) { // 1st
 
-  if(isRegistered === true) { // 3rd
-    alert("You are a Valid Voter!");
-  } else { // 3rd
-    alert("You need to Register First.")
-  }
+//   if(isRegistered) { // 3rd
+//     alert("You are a Valid Voter!");
+//   } else { // 3rd
+//     alert("You need to Register First.")
+//   }
 
-} else if(isRegistered === true) { // 2nd
-  alert("You are Invalid Voter.")
-} else { // 1st
-  alert("You are a Non Voter")
+// } else if(isRegistered) { // 2nd
+//   alert("You are Invalid Voter.")
+// } else { // 1st
+//   alert("You are a Non Voter")
+// }
+
+// Mentor Solution: Using Logical Operator
+// if(isRegistered && age >= 18) alert("Valid Voter");
+// else if(!isRegistered && age >=18) alert("Register First");
+// else if(isRegistered && age < 18) alert("Invalid Voter");
+// else alert("Non Voter");
+
+// Mentor Solution: Using Nested Conditions
+if(isRegistered) { // Group of registered
+
+  if(age >= 18) alert("Valid Voter"); // Registered and 18 above
+  else alert("Invalid Voter"); // Registered and below 18
+
+} else { // Group of unregistered
+
+  if(age >= 18) alert("Register First"); // Not Registered and 18 above
+  else alert("Non Voter"); // Not Registered and below 18 - Non Voter
 }
