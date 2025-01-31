@@ -5,7 +5,7 @@
   20 - 59 years old -> Adult
   60 years old and above -> Senior Citizen
 */}
-let age = 125;
+let age = 124;
 
 // Conditions
 if(age <= -1) {
@@ -40,7 +40,7 @@ if(number % 2 == 0) {
 // Arrays
 let colors = ["Red", "Yellow", "Green"];
 let rules = ["Stop", "Slow Down", "Go"]
-let id = 3;
+let id = 2;
 
 // Conditions
 if(colors[id] == "Red") {
