@@ -61,3 +61,27 @@ else if(temperature <= 25 && itsRaining) alert(`TASK 2: WEATHER CLOTHING DECIDER
 else if(temperature <= 25 && !itsRaining) alert(`TASK 2: WEATHER CLOTHING DECIDER\nTemperature: ${temperature}\u00B0 C\nTip: Wear a t-shirt.`);
 else if (temperature <= 49 && !itsRaining) alert(`TASK 2: WEATHER CLOTHING DECIDER\nTemperature: ${temperature}\u00B0 C\nTip: Wear a Sando or Cotton t-shirt.`);
 else alert(`TASK 2: WEATHER CLOTHING DECIDER\nTemperature: ${temperature}\u00B0 C\nTip: Wear a High-end cooling suit and vest.`);
+
+
+// TASK 3: SHOPPING DISCOUNT CALCULATOR
+{/*
+  📌 Discount Criteria:
+    - Kung ang total purchase ay higit sa 500 at ang customer ay VIP:
+    "You get a 20% discount."
+
+    - Kung ang total purchase ay higit sa 500 at ang customer ay hindi VIP:
+    "You get a 10% discount."
+
+    - Kung ang total purchase ay 500 o mas mababa at ang customer ay VIP:
+    "You get a 5% discount."
+
+    - Kung ang total purchase ay 500 o mas mababa at ang customer ay hindi VIP:
+    "No discount available."
+
+📌 Sample Test Cases & Expected Output:
+Input Total 	Purchase Is Customer VIP? (yes/no)	    Expected Output
+   600		            yes				                      "You get a 20% discount."
+   600		            no				                      "You get a 10% discount."
+   400		           yes				                      "You get a 5% discount."
+   400		            no				                      "No discount available."
+*/}
