@@ -136,60 +136,101 @@ let cashierNames = [
 
 let totalPurchase = [590.00, 3000.00, 345.00, 150.00, 2230.00, 80.00, 14350.00, 20.00, 7300.00,];
 
-let isVip = [true, true, false, true, false, false, true, false, true,];
+let isVip = [true, false, false, true, false, false, true, false, true,]; // If customer is Vip or not
 
-let id = 1;
-
-// Adding customer to last index using array length and push
-customers.push("Momo Satsuki");
-brands[brands.length] = "Garnier";
-products.push("Bright Anti Acne");
-sizes.push("Large");
-colors[colors.length] = "White";
-dateBuys[dateBuys.length] = "June 21, 2024";
-dateTimes.push("7:30:27 PM");
-cashierNames.push("Ms.Kaguya Sakamoto");
-totalPurchase[totalPurchase.length] = 345.00;
+// Adding customer to last index using array length and push (Short liner code)
+customers.push("Momo Satsuki"); brands[brands.length] = "Garnier";products.push("Bright Anti Acne"); sizes.push("Large");
+colors[colors.length] = "White"; dateBuys[dateBuys.length] = "June 21, 2024"; dateTimes.push("7:30:27 PM");
+cashierNames.push("Ms.Kaguya Sakamoto"); totalPurchase[totalPurchase.length] = 345.00;
 isVip[isVip.length] = true;
 
+// Adding customer to first index using unshift (Short liner code)
+customers.unshift("Yumeko Sakurako"); brands.unshift("Victoria's Secret"); products.unshift("Perfume Barcelona");
+sizes.unshift("Medium"); colors.unshift("Red and Light Brown"); dateBuys.unshift("May 11, 2025");
+dateTimes.unshift("8:10:32 AM"); cashierNames.unshift("Lisa Hirano"); totalPurchase.unshift(23550.00); isVip.unshift(true);
+
+// Convert boolean true or false into english language, Yes and No (Short liner code): Optional
+// isVip[1] = "Yes";
+// isVip[2] = "Yes";
+// isVip[3] = "No";
+// isVip[4] = "Yes";
+// isVip[5] = "No";
+// isVip[6] = "No";
+// isVip[7] = "Yes";
+// isVip[8] = "Yes";
+// isVip[9] = "Yes";
+// isVip[10] = "Yes";
+
+let id = 3; // Customer ID
 
 // Conditions: Nested Statements
-if(totalPurchase[id] >= 500) { // Group of total purchase is 500.00 up
-  if(isVip[id]) {
-    alert(
-     `CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+if(totalPurchase[id] > 500)   // Group of total purchase is 500.00 up
+  if(isVip[id] === true) alert(`CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
-      \nMessage : You get a 20% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.2)}.00`
+      \nMessage : You get a 20% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.2)}.00
+      \nChange : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.2) - totalPurchase[id]}.00`
      );
-  } else {
-    alert(
+  else alert(
      `CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
-      \nMessage : You get a 10% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.1)}.00`
+      \nMessage : You get a 10% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.1)}.00
+      \nChange : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.1) - totalPurchase[id]}.00`
      );
-  }
-
-} else if(totalPurchase[id] <= 499) { // Group of total purchase is 499.00 low
-  if(isVip[id]) {
-    alert(
-     `CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+else if(totalPurchase[id] <= 500) // Group of total purchase is 500.00 low
+  if(isVip[id] === true) alert(`CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
-      \nMessage : You get a 5% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.05)}.00`
+      \nMessage : You get a 5% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.05)}.00
+      \nChange : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.05) - totalPurchase[id]}.00`
     );
-  } else {
-    alert(
-     `CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+  else alert(`CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
-      \nMessage : No discount available.\nFinal Price : \u20B1${totalPurchase[id]}.00`
+      \nMessage : No discount available.\nFinal Price : \u20B1${totalPurchase[id]}.00
+      \nChange : \u20B1${totalPurchase[id] - totalPurchase[id]}.00`
      );
-  }
-} else {
-  alert(`Index: ${totalPurchase[id]}\nInvalid Index. Try again`);
-}
+else alert(`Index: ${totalPurchase[id]}\nInvalid Index. Try again`);
+  
+
+// Conditions: Nested Statements
+// if(totalPurchase[id] > 500) { // Group of total purchase is 500.00 up
+//   if(isVip[id]) {
+//     alert(`CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+//       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
+//       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
+//       \nMessage : You get a 20% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.2)}.00
+//       \nChange : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.2) - totalPurchase[id]}.00`
+//      );
+//   } else {
+//      alert(
+//      `CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+//       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
+//       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
+//       \nMessage : You get a 10% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.1)}.00
+//       \nChange : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.1) - totalPurchase[id]}.00`
+//      );
+//   }
+// } else if(totalPurchase[id] <= 500) { // Group of total purchase is 500.00 low  
+//    if(isVip[id]) {
+//     alert(`CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+//       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
+//       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
+//       \nMessage : You get a 5% discount.\nFinal Price : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.05)}.00
+//       \nChange : \u20B1${totalPurchase[id] - (totalPurchase[id] * 0.05) - totalPurchase[id]}.00`
+//     );
+//   } else {
+//     alert(`CUSTOMER INFORMATION\nCustomer Name : ${customers[id]}\nBrand : ${brands[id]}\nProduct : ${products[id]}\nSize : ${sizes[id]}
+//       \nColor: ${colors[id]}\nDate : ${dateBuys[id]}\nTime : ${dateTimes[id]}\nCashier Name : ${cashierNames[id]}
+//       \nCustomer ID : ${id}\nTotal Amount : \u20B1${totalPurchase[id]}.00\nVip : ${isVip[id]}
+//       \nMessage : No discount available.\nFinal Price : \u20B1${totalPurchase[id]}.00
+//       \nChange : \u20B1${totalPurchase}.00`
+//      );
+//   }
+// } else {
+//   alert(`Index: ${totalPurchase[id]}\nInvalid Index. Try again`);
+// }
 
 
 
