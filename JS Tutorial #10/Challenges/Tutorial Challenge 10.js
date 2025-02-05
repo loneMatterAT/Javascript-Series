@@ -92,6 +92,8 @@ if(!isFound) console.log(`${search} is Not Found on array.`);
 
 
 
+
+
 // Second Option
 // for(let i = 0; i < names.length; i++) {
 //   if(names[i] === isSearch) alert(`We Found ${names[i]}!`);
