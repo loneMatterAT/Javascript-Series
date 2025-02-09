@@ -126,7 +126,7 @@ let items = [
 ];
 
 // Options
-console.log(`SARI-SARI STORE\n[1] : ADD ITEM\n[2] : DELETE ITEM\n[3] : SEARCH ITEM\n[4] : VIEW ALL ITEM\n[5] : EXIT`)
+console.log(`SARI-SARI STORE\n[1] : ADD ITEM\n[2] : DELETE ITEM\n[3] : EDIT ITEM\n[4] : SEARCH ITEM\n[5] : SHOW ALL INFO\n[0] : EXIT`)
 let option = prompt("Enter option you want to perform : ")
 
 // OPTION 1 : ADD ITEM
@@ -183,8 +183,29 @@ if (indexToRemove !== -1) {
 
 // Show the updated array
 console.log("Updated items list:", items);
-// OPTION 3 : SEARCH ITEM INFO
+// OPTION 3 : EDIT ITEM
 } else if(parseInt(option) === 3) {
+  let searchID = prompt("Enter Item ID to edit: ");
+  let indexToEdit = items.findIndex(item => item.itemID === parseInt(searchID));
+
+if (indexToEdit !== -1) {
+  console.log("Current item details:");
+  console.log(items[indexToEdit]);
+
+  items[indexToEdit].itemID = parseInt(prompt("Enter new Item ID (or press Enter to keep current): ")) || items[indexToEdit].itemID;
+  items[indexToEdit].itemName = prompt("Enter new Item Name (or press Enter to keep current): ") || items[indexToEdit].itemName;
+  items[indexToEdit].price = parseFloat(prompt("Enter new Price (or press Enter to keep current): ")) || items[indexToEdit].price;
+  items[indexToEdit].weight = parseInt(prompt("Enter new Weight (or press Enter to keep current): ")) || items[indexToEdit].weight;
+  items[indexToEdit].type = prompt("Enter new Type (or press Enter to keep current): ") || items[indexToEdit].type;
+  items[indexToEdit].packaging = prompt("Enter new Packaging (or press Enter to keep current): ") || items[indexToEdit].packaging;
+
+  console.log("Item updated successfully!");
+  console.log(items[indexToEdit]);
+} else {
+  console.log("Item not found.");
+}
+// OPTION 4 : SEARCH ITEM INFO
+} else if(parseInt(option) === 4) {
   let isSearch = prompt("Enter Item ID you want to know the info : ");
   for(let i = 0; i < items.length; i++) {
   if(parseInt(isSearch) === items[i].itemID) {
@@ -202,24 +223,24 @@ console.log("Updated items list:", items);
 if (!hasFound) {
   console.log("Item not found.");
 }
-// OPTION 4 : SHOW ALL ITEM INFO
-} else if(parseInt(option) === 4) {
-    for(let i = 0; i < items.length; i++) {
-      console.log(`SARI-SARI STORE ITEM : ${i + 1}`);
-      console.log(`Item ID   : ${items[i].itemID}`);
-      console.log(`Item Name : ${items[i].itemName}`);
-      console.log(`Price     : ${items[i].price}`);
-      console.log(`Weight    : ${items[i].weight}`);
-      console.log(`Type      : ${items[i].type}`);
-      console.log(`Packaging : ${items[i].packaging}\n\n`);
-    }
-// OPTION 5 : EXIT
+// OPTION 5 : SHOW ALL ITEM INFO
 } else if(parseInt(option) === 5) {
-  console.log("SYSTEM TERMINATED...");
-  window.close();
+  for(let i = 0; i < items.length; i++) {
+    console.log(`SARI-SARI STORE ITEM : ${i + 1}`);
+    console.log(`Item ID   : ${items[i].itemID}`);
+    console.log(`Item Name : ${items[i].itemName}`);
+    console.log(`Price     : ${items[i].price}`);
+    console.log(`Weight    : ${items[i].weight}`);
+    console.log(`Type      : ${items[i].type}`);
+    console.log(`Packaging : ${items[i].packaging}\n\n`);
+  }
+// OPTION 6 : EXIT
+} else if(parseInt(option) === 0) {
+console.log("SYSTEM TERMINATED...");
+window.close();
 } else {
-  console.log("Invalid option. Try again...");
-};
+console.log("Invalid option. Try again...");
+}
 
 
 
